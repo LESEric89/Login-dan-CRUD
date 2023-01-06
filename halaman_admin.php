@@ -8,7 +8,7 @@
  
 	// cek apakah yang mengakses halaman ini sudah login
 	if($_SESSION['level']==""){
-		header("location:index.php?pesan=gagal");
+		header("location:halaman_admin.php?pesan=gagal");
 	}
  
 	?>

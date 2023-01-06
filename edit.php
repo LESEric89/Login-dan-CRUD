@@ -14,6 +14,7 @@
 			</div>
 			<div>
 				<?php
+				session_start();
 				include('koneksi.php');
 
 				$id = $_GET['id']; //mengambil id barang yang ingin diubah
@@ -45,6 +46,7 @@
 				</form>
 
 				<?php
+				
 
 				//jika klik tombol submit maka akan melakukan perubahan
 				if (isset($_POST['submit'])) {
@@ -57,7 +59,7 @@
 					mysqli_query($koneksi, "update barang set nama='$nama', harga='$harga', deskripsi='$deskripsi' where id ='$id'") or die(mysqli_error($koneksi));
 
 					//redirect ke halaman index.php
-					echo "<script>alert('data berhasil diupdate.');window.location='index.php';</script>";
+					echo "<script>alert('data berhasil diupdate.');window.location='halaman_admin.php';</script>";
 				}
 
 

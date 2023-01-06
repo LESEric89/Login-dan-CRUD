@@ -6,6 +6,10 @@
 </head>
 
 <body>
+<?php
+include('koneksi.php');
+session_start();
+?>
 	<div>
 		<h1>Table Barang</h1>
 		<div>
@@ -32,8 +36,7 @@
 				</form>
 
 				<?php
-				include('koneksi.php');
-				
+								
 				//melakukan pengecekan jika button submit diklik maka akan menjalankan perintah simpan dibawah ini
 				if (isset($_POST['submit'])) {
 					//menampung data dari inputan
@@ -46,7 +49,7 @@
 					//id barang tidak dimasukkan, karena sudah menggunakan AUTO_INCREMENT, id akan otomatis
 
 					//ini untuk menampilkan alert berhasil dan redirect ke halaman index
-					echo "<script>alert('data berhasil disimpan.');window.location='index.php';</script>";
+					echo "<script>alert('data berhasil disimpan.');window.location='halaman_admin.php';</script>";
 				}
 				?>
 			</div>
